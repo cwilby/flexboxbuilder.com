@@ -1,15 +1,7 @@
 <template>
-  <div class="fbb-workspace" @click="selectBlock(null)">
+  <div class="fbb-workspace" @click="selectNode(null)">
     <div class="fbb-phone-display" :style="root.style">
-      <div 
-        v-for="(block, i) in blocks" 
-        :key="i" 
-        @click.stop.prevent="selectBlock(block)"
-        class="fbb-phone-display-block" 
-        :class="block.class"
-        :style="block.style">
-        {{block.content || i}}
-      </div>
+      <recursive-node :nodes="root.children" />
     </div>
   </div>
 </template>
@@ -19,10 +11,10 @@ import { mapState, mapActions } from 'vuex';
 
 export default {
   computed: {
-    ...mapState(['root', 'blocks'])
+    ...mapState(['root'])
   },
   methods: {
-    ...mapActions(['selectBlock'])
+    ...mapActions(['selectNode'])
   }
 };
 </script>
@@ -44,10 +36,9 @@ export default {
   box-shadow: 5px 5px 5px lightgray
   border: 1px solid lightgray
 
-  &-block
-    &:hover
-      transition: 0.2s ease-in-out
-      border: 1px solid cornflowerblue
-      cursor: pointer
+  .recursive-node
+    width: 100%
+    display: flex
+    
   
 </style>

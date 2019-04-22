@@ -2,9 +2,8 @@
   <div class="fbb-actions">
     <header>Flexbox Builder</header>
     <div class="actions">
-      <button class="btn btn-block btn-outline-primary" @click="addBlock">Add block</button>
+      <button class="btn btn-block btn-outline-primary" @click="addNode">Add node</button>
     </div>
-    <div class="settings"></div>
   </div>
 </template>
 
@@ -16,7 +15,7 @@ export default {
     code: ""
   }),
   methods: {
-    ...mapActions(['addBlock'])
+    ...mapActions(['addNode'])
   }
 };
 </script>

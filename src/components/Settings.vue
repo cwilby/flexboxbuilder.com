@@ -4,15 +4,18 @@
       Settings
     </header>
     <div class="fbb-settings-settings">
-      <div v-if="selectedBlock">
+      <div v-if="selectedNode">
         <b-form-group label="Display">
-          <b-form-select v-model="selectedBlockDisplay" :options="displayOptions"></b-form-select>
+          <b-form-select v-model="selectedNodeDisplay" :options="displayOptions"></b-form-select>
         </b-form-group>
         <b-form-group label="Flex">
-          <b-form-input v-model="selectedBlockFlex"></b-form-input>
+          <b-form-input v-model="selectedNodeFlex"></b-form-input>
+        </b-form-group>
+        <b-form-group label="Flex Direction">
+          <b-form-select v-model="selectedNodeFlexDirection" :options="flexDirections"></b-form-select>
         </b-form-group>
         <b-form-group label="Content">
-          <b-form-input v-model="selectedBlockContent"></b-form-input>
+          <b-form-input v-model="selectedNodeContent"></b-form-input>
         </b-form-group>
       </div>
       <div v-else>
@@ -50,14 +53,15 @@ export default {
     ]
   }),
   computed: {
-    ...mapState(['selectedBlock']),
+    ...mapState(['selectedNode']),
     ...mapFields({
       rootFlexDirection: 'root.style.flex-direction',
       rootWidth: 'root.style.width',
       rootHeight: 'root.style.height',
-      selectedBlockDisplay: 'selectedBlock.style.display',
-      selectedBlockFlex: 'selectedBlock.style.flex',
-      selectedBlockContent: 'selectedBlock.style.content'
+      selectedNodeDisplay: 'selectedNode.style.display',
+      selectedNodeFlex: 'selectedNode.style.flex',
+      selectedNodeFlexDirection: 'selectedNode.style.flex-direction',
+      selectedNodeContent: 'selectedNode.style.content'
     })
   }
 }

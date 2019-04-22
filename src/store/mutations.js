@@ -3,10 +3,14 @@ import { updateField } from 'vuex-map-fields';
 export default {
   updateField,
   
-  addBlock(state, block) {
-    state.blocks.push(block);
+  addNode(state, node) {
+    if(state.selectedNode) {
+      state.selectedNode.children.push(node);
+    } else {
+      state.root.children.push(node);
+    }
   },
-  setSelectedBlock(state, block) {
-    state.selectedBlock = block;
+  setSelectedNode(state, node) {
+    state.selectedNode = node;
   }
 };
