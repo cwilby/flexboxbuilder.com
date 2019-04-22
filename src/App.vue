@@ -2,16 +2,14 @@
   <div class="fbb">
     <Actions />
     <Workspace />
-    <Settings />
   </div>
 </template>
 
 <script>
 import Actions from './components/Actions';
 import Workspace from './components/Workspace';
-import Settings from './components/Settings';
 export default {
-  components: { Actions, Workspace, Settings },
+  components: { Actions, Workspace },
   name: 'app'
 }
 </script>

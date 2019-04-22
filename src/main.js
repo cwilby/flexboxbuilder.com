@@ -3,7 +3,7 @@ import BootstrapVue from 'bootstrap-vue';
 import VueFragment from 'vue-fragment';
 import App from './App.vue'
 import store from './store';
-import RecursiveNode from './components/RecursiveNode';
+import Tree from './components/Tree';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -11,7 +11,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue);
 Vue.use(VueFragment.Plugin);
 
-Vue.component('recursive-node', RecursiveNode);
+Vue.component('tree', Tree);
 
 new Vue({
   store,

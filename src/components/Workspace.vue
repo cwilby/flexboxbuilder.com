@@ -1,7 +1,7 @@
 <template>
   <div class="fbb-workspace" @click="selectNode(null)">
     <div class="fbb-phone-display" :style="root.style">
-      <recursive-node :nodes="root.children" />
+      <tree :nodes="root.children" />
     </div>
   </div>
 </template>
