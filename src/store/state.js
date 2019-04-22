@@ -5,8 +5,8 @@ export default {
     style: {
       'display': 'flex',
       'flex-direction': 'row',
-      width: '320px',
-      height: '640px'
+      width: '960px',
+      height: '768px'
     },
     children: []
   },
