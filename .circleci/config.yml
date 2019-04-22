@@ -19,6 +19,9 @@ jobs:
     docker:
       - image: circleci/golang:1.9.6
     steps:
+      - add_ssh_keys:
+          fingerprints: 
+            - "b9:ea:ce:00:7c:fb:21:85:86:32:34:61:4d:20:57:85"
       - run: 
           name: Deploy to DigitalOcean
           command: |
