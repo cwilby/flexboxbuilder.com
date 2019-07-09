@@ -29,12 +29,19 @@ export default {
   align-items: center
   padding: 1em
   background-image: url('../assets/memphis-mini.png')
+  cursor: pointer
 
 .fbb-phone-display
   display: flex
   background-color: white
   box-shadow: 5px 5px 5px lightgray
   border: 1px solid lightgray
+  max-height: calc(100vh - 5em)
+  overflow-y: auto
+  &:hover
+    transition: 0.2s ease-in-out
+    cursor: pointer
+    border: 1px solid cornflowerblue
 
   .recursive-node
     width: 100%
